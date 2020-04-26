@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { actionCreators } from "../store";
+import { add } from "../store";
 import ToDo from "../components/ToDo";
 
 function Home({ toDos, addToDo }) {
@@ -37,7 +37,7 @@ function mapStateToProps(state) {
 // mapDispatchToProps는 addToDo를 ownProps에 포함시킨다. addToDo는 함수 인자로서, store의 actionCreators 중 addToDO action을 부르는 function이다.
 function mapDispatchToProps(dispatch) {
   return {
-    addToDo: (text) => dispatch(actionCreators.addToDo(text)),
+    addToDo: (text) => dispatch(add(text)),
   };
 }
 
